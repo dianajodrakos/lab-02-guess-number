@@ -162,3 +162,7 @@ strong {
 li {
     display: inline;
 }
+
+div {
+    padding: 10px;
+}
