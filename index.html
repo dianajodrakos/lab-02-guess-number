@@ -14,12 +14,12 @@
 <body>
 
 <header>
-    <div id="hint" class="hidden">Hint reveal on incorrect guess</div>
-    <div id="rules">Rules, we love rules</div>
+    <div id="hint" class="hidden">results div</div>
+    <div id="rules">Rules, we love rules. They go here.</div>
 </header>
 
 <main>
-    <div class="main-one"><input type="number" min="1" max="20" id="input" placeholder="1"></input></div>
+    <div class="main-one"><input type="number" min="1" max="20" id="input" placeholder="1" value=""></input></div>
     <div class="main-two"><button type="button" diabled="false" id="button">=</button></div>
     <div class="main-one" id="random">?</div>
 </main>
@@ -29,7 +29,7 @@
         <span class="foot a">guesses left</span>
         <span class="foot b" id="guesses-left">0</span>
     </div>
-    <div id="rounds-won" class="footer">
+    <div class="footer">
         <span class="foot b">won</span>
         <span class="foot a" id="rounds-won">0</span>
     </div>
@@ -37,8 +37,8 @@
         <span class="foot a">lost</span>
         <span class="foot b" id="rounds-lost">0</span>
     </div>
-    <button type="button" class="footer">Play Again</button>
-    <button type="button" class="footer">Reset Score</button>
+    <button type="button" class="footer" id="play-again">Play Again</button>
+    <button type="button" class="footer" id="reset">Reset Score</button>
 </footer>
 
 <script type="module" src="./app.js"></script>

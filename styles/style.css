@@ -91,11 +91,17 @@ button {
     border: .5px solid #ccc;
     border-radius: 2rem;
     font-size: .9rem;
+    margin: 0 .2rem;
 }
 
-button:hover {
+button:hover:active {
     box-shadow: .5rem .5rem .5rem aliceblue;
     transform: translate(.05rem, .05rem);
+}
+
+button:disabled {
+    background: #ddd;
+    box-shadow: .5rem .5rem .5rem #aliceblue;
 }
 
 button:active {

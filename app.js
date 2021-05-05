@@ -3,7 +3,9 @@ import { compareNumbers } from './utils.js';
 
 const rulesDisplay = document.getElementById('rules');
 const guessInput = document.getElementById('input');
-const button = document.getElementById('button');
+const evalButton = document.getElementById('button');
+const playAgainButton = document.getElementById('play-again');
+const resetButton = document.getElementById('reset');
 const randomDisplay = document.getElementById('random');
 const resultDisplay = document.getElementById('hint');
 const guessesLeftOutput = document.getElementById('guesses-left');
@@ -15,22 +17,12 @@ let guessesLeft = 4;
 let correctNumber = Math.ceil(Math.random() * 20);
 let wins = 0;
 let attempts = 0;
-let losses = attempts - wins; 
 
 // set event listeners to update state and DOM
-button.addEventListener ('click', () => {
-
-
+evalButton.addEventListener ('click', () => {
     let guess = Number(guessInput.value);
     let guessEval = compareNumbers(guess, correctNumber);
-
-    console.log(guess);
     console.log(correctNumber);
-    console.log(guessEval);
-    console.log(guessesLeft);
-    console.log(wins);
-    console.log(attempts);
-
     if (guessEval === -1) {
         resultDisplay.classList.remove('hidden');
         resultDisplay.textContent = 'too low';
@@ -42,7 +34,7 @@ button.addEventListener ('click', () => {
         guessesLeft--;
     }    
     if (guessEval === 0) {
-        button.disabled = true;
+        evalButton.disabled = true;
         resultDisplay.classList.remove('hidden');
         resultDisplay.textContent = 'correct';
         guessesLeft = 0 ;
@@ -52,12 +44,44 @@ button.addEventListener ('click', () => {
     if (guessesLeft === 0) {
         randomDisplay.textContent = correctNumber;
         attempts++;
-        button.disabled = true;
-
+        evalButton.disabled = true;
     }
-
+    let losses = attempts - wins;
     guessesLeftOutput.textContent = guessesLeft;
     winOutput.textContent = wins;
-    lossOutput.textContent = (attempts - wins);
+    lossOutput.textContent = losses;
+});
 
+playAgainButton.addEventListener ('click', () => {
+    //generate new random number
+    correctNumber = Math.ceil(Math.random() * 20);
+
+    //reset guesses
+    guessesLeft = 4;
+
+    //reset DOM display
+    resultDisplay.classList.add('hidden');
+    randomDisplay.textContent = '?';
+    evalButton.disabled = false;
+    guessInput.value = '';
+    guessesLeftOutput.textContent = guessesLeft;
+});
+
+resetButton.addEventListener ('click', () => {
+    //generate new random number
+    correctNumber = Math.ceil(Math.random() * 20);
+
+    //reset scoring variables
+    attempts = 0;
+    wins = 0;
+    guessesLeft = 4;
+
+    //reset DOM display
+    resultDisplay.classList.add('hidden');
+    randomDisplay.textContent = '?';
+    evalButton.disabled = false;
+    guessInput.value = '';
+    guessesLeftOutput.textContent = guessesLeft;
+    winOutput.textContent = wins;
+    lossOutput.textContent = 0;
 });
