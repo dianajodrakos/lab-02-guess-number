@@ -19,7 +19,7 @@ header {
     font-size: 18px;
     display: flex;
     flex-direction: column;
-    justify-content:space-around;
+    justify-content:center;
     align-items: center;
     text-align: center;
     padding: 1rem 3rem;
@@ -101,7 +101,7 @@ button:hover:active {
 
 button:disabled {
     background: #ddd;
-    box-shadow: .5rem .5rem .5rem #aliceblue;
+    box-shadow: .5rem .5rem .5rem aliceblue;
 }
 
 button:active {

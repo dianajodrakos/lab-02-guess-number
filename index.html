@@ -14,8 +14,8 @@
 <body>
 
 <header>
+    <div id="rules">Guess the number! You have four chances.</div>
     <div id="hint" class="hidden">results div</div>
-    <div id="rules">Rules, we love rules. They go here.</div>
 </header>
 
 <main>
@@ -33,12 +33,12 @@
         <span class="foot b">won</span>
         <span class="foot a" id="rounds-won">0</span>
     </div>
-    <div class="footer">   
+    <div class="footer">
         <span class="foot a">lost</span>
         <span class="foot b" id="rounds-lost">0</span>
     </div>
-    <button type="button" class="footer" id="play-again">Play Again</button>
-    <button type="button" class="footer" id="reset">Reset Score</button>
+    <div class="footer"><button type="button" class="footer" id="play-again">Play Again</button></div>
+    <div class="footer"><button type="button" class="footer" id="reset">Reset Score</button></div>
 </footer>
 
 <script type="module" src="./app.js"></script>
