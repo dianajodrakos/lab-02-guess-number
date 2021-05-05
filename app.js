@@ -35,6 +35,7 @@ evalButton.addEventListener ('click', () => {
             randomDisplay.textContent = correctNumber;
             attempts++;
             evalButton.disabled = true;
+            playAgainButton.disabled = false;
         }
     }
 
@@ -49,6 +50,7 @@ evalButton.addEventListener ('click', () => {
             randomDisplay.textContent = correctNumber;
             attempts++;
             evalButton.disabled = true;
+            playAgainButton.disabled = false;
         } 
     }
 
@@ -80,6 +82,7 @@ playAgainButton.addEventListener ('click', () => {
     resultDisplay.classList.add('hidden');
     randomDisplay.textContent = '?';
     evalButton.disabled = false;
+    playAgainButton.disabled = true;
     guessInput.value = '';
     guessesLeftOutput.textContent = guessesLeft;
 });

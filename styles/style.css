@@ -94,6 +94,10 @@ button {
     margin: 0 .2rem;
 }
 
+button:active {
+    background: aquamarine;
+}
+
 button:hover:active {
     box-shadow: .5rem .5rem .5rem aliceblue;
     transform: translate(.05rem, .05rem);
@@ -101,13 +105,8 @@ button:hover:active {
 
 button:disabled {
     background: #ddd;
-    box-shadow: .5rem .5rem .5rem aliceblue;
+    box-shadow: none;
 }
-
-button:active {
-    background: aquamarine;
-}
-
 .card {
     display: flex;
     flex-direction: column;
