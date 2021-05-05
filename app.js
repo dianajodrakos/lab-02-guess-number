@@ -35,25 +35,29 @@ button.addEventListener ('click', () => {
         resultDisplay.classList.remove('hidden');
         resultDisplay.textContent = 'too low';
         guessesLeft--;
-    } else if (guessEval === 1) {
+    }
+    if (guessEval === 1) {
         resultDisplay.classList.remove('hidden');
         resultDisplay.textContent = 'too high';
         guessesLeft--;
-    } else {
+    }    
+    if (guessEval === 0) {
+        button.disabled = true;
         resultDisplay.classList.remove('hidden');
         resultDisplay.textContent = 'correct';
         guessesLeft = 0 ;
         wins++;
-        
     }
 
     if (guessesLeft === 0) {
         randomDisplay.textContent = correctNumber;
         attempts++;
+        button.disabled = true;
+
     }
 
     guessesLeftOutput.textContent = guessesLeft;
     winOutput.textContent = wins;
-    lossOutput.textContent = losses;
+    lossOutput.textContent = (attempts - wins);
 
 });
