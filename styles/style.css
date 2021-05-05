@@ -1,173 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap');
 
 body {
-    --color1: rgba(255, 255, 255, 1);
-    --color2: #eee;
-    --shadow: 15px 5px 15px -12px rgba(0,0,0,0.45);
-    --gutter: 50px;
-    --header-height: 200px;
-    --footer-height: 50px;
+    --color1: mintcream;
+    --color2: #000;
+    --color3: aquamarine;
+    --color4: plum;
     height: 100%;
     width: 100%;
-    min-width: 500px;
-    font-family: 'Titillium Web', sans-serif;
-    font-size: 18px;
-    font-size: 1.5vw;
-    background-color: var(--color2);
+    position: fixed;
+    display: grid;
+    grid-template-rows: 20vmin 50vmin 30vmin;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 4vmin;
+    font-weight: bolder;
+    background-color: var(--color3);
+    text-align: center;
+    text-transform: lowercase;
 }
 
 header {
-    font-size: 18px;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content:center;
     align-items: center;
-    text-align: center;
-    padding: 1rem 3rem;
-    position: fixed;
-    width: 100%;
-    min-height: var(--header-height);
-    background-color: var(--color1);
-    box-shadow: var(--shadow);
-    border-top: .5px solid #ccc;
+    align-content: center;
+    border-bottom: 1vmin solid var(--color3);
 }
 
 main {
-    background-color: var(--color1);
-    padding: var(--gutter);
-    padding-top: calc(var(--header-height) + 60px);
-    align-self: center;
-    display: flex;
-    flex-flow: row wrap;
-    align-items: flex-start;
-    justify-content: center;
-    background: ghostwhite;
-}
-
-section {
-    background-color: var(--color1);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: stretch;
+    justify-content: stretch;
+    font-size: 25vmin;
 }
 
 footer {
     width: 100%;
-    height: var(--footer-height);
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    justify-content: stretch;
+    align-items: stretch;
+    border-top: 1vmin solid var(--color3);
+    border-bottom: 0;
+}
+
+div {
+    width: 100%;
+    height: 100%;
     display: flex;
-    justify-content: center;
+    justify-content:center;
     align-items: center;
-    background-color: var(--color2);
-    border-top: .5px solid #ccc;
-    padding: calc(var(--gutter) / 2);
-    font-size: 1rem;
-    word-spacing: .2rem;
 }
 
-h2 {
-    font-size: 1.8rem;
-    font-weight: bold;
+.score-two {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+    justify-content: stretch;
+    align-items: stretch;
 }
 
-a {
-    color: blue;
+.score-one .b, .score-two .b {
+    font-size: 15vmin;
 }
 
-a:active {
-    color: aquamarine;
-
+.score-two .a {
+    font-size: 3vmin;
 }
 
-a:visited {
-    color: cornflowerblue;
+.score-one {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+    justify-content: stretch;
+    align-items: stretch;
+    border-left: 1vmin solid var(--color3);
+    border-right: 1vmin solid var(--color3);
 }
 
+input {
+    width: 100%;
+    height: 100%;
+    color: inherit;
+    background: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    text-align: center;
+    text-transform: uppercase;
+    border: 0;
+    caret-color: transparent;
+}
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number]{
+    -moz-appearance: textfield;
+}
+
+input:hover {
+    background: var(--color3);
+    color: var(--color1);
+}
+
+input:focus, button:active {
+    outline: none;
+    background: var(--color3);
+    color: var(--color4);
+}
+::placeholder {
+    opacity: .3;
+}
 button {
-    padding: .5rem 2rem;
-    /* margin: 1.5rem 0; */
-    background: #eee;
-    box-shadow: .2rem .2rem .1rem aliceblue;
-    border: .5px solid #ccc;
-    border-radius: 2rem;
-    font-size: .9rem;
-    margin: 0 .2rem;
+    width: 100%;
+    height: 100%;
+    color: inherit;
+    background: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    text-transform: uppercase;
+    border: 0;
+    margin: 0;
+}
+
+button:hover {
+    background: aquamarine;
 }
 
 button:active {
     background: aquamarine;
 }
 
-button:hover:active {
-    box-shadow: .5rem .5rem .5rem aliceblue;
-    transform: translate(.05rem, .05rem);
-}
-
 button:disabled {
-    background: #ddd;
-    box-shadow: none;
-}
-.card {
-    display: flex;
-    flex-direction: column;
-    background-color: gainsboro;
-    border: 0;
-    border-top-left-radius: 2.5rem;
-    border-bottom-left-radius: .5rem;
-    border-top-right-radius: .5rem;
-    border-bottom-right-radius: .5rem;
-    padding: 1rem;
-    width: 300px;
-    margin: .5rem;
-    box-shadow: .4rem .4rem .3rem aliceblue;
-    break-inside: avoid;}
-
-img {
-    display: block;
-    max-width: 100%;
-    border-top-left-radius: 2rem;
-    border-top-right-radius: .2rem;
-    overflow: hidden;
-    border-top: .5px solid #bbb;
-    border-left: .5px solid #bbb;
-    border-right: .5px solid #bbb;
-}
-
-.card p {
-    padding: 1rem;
-    background-color:whitesmoke;
-    border-left: .5px solid #bbb;
-    border-right: .5px solid #bbb;
-    border-bottom: .5px solid #bbb;
-    align-self: flex-end;
-    font-size: .8rem;
-    line-height: 1.1rem;
-    text-indent: 1rem;
-    border-bottom-left-radius: .2rem;
-    border-bottom-right-radius: .2rem;
-}
-
-strong {
-    font-weight: bolder;
-    color: midnightblue;
-}
-
-#result {
-    background: #eee;
-    border-radius: 2rem;
-    border: .5px solid #ccc;
-    padding: .4rem 2rem;
-    margin: .4rem 0;
+    display: none;
 }
 
 .hidden {
     display: none;
 }
 
-li {
-    display: inline;
+.a {
+    color: var(--color1);
+    background-color: var(--color2);
 }
 
-div {
-    padding: 10px;
+.b {
+    color: var(--color4);
+    background-color: var(--color1);
+}
+
+.c {
+    color: var(--color1);
+    background-color: var(--color2);
 }

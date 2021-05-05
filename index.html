@@ -14,31 +14,31 @@
 <body>
 
 <header>
-    <div id="rules">Guess the number! You have four chances.</div>
-    <div id="hint" class="hidden">results div</div>
+    <div id="rules" class="b">Guess the number! It's between 1 and 20. You have 4 chances.</div>
+    <div id="hint" class="hidden c">results div</div>
 </header>
 
 <main>
-    <div class="main-one"><input type="number" min="1" max="20" id="input" placeholder="1" value=""></input></div>
-    <div class="main-two"><button type="button" diabled="false" id="button">=</button></div>
-    <div class="main-one" id="random">?</div>
+    <div class="main a"><input type="number" min="1" max="20" id="input" placeholder="1" value=""></input></div>
+    <div class="main b"><button type="button" diabled="false" id="button">=</button></div>
+    <div class="main a" id="random">?</div>
 </main>
 
 <footer>
-    <div class="footer">
-        <span class="foot a">guesses left</span>
-        <span class="foot b" id="guesses-left">0</span>
+    <div class="footer b"><button type="button" class="footer" id="play-again" disabled="true">Play<br>Again</button></div>
+    <div class="footer score-one">
+        <div class="b" id="rounds-won">0</div>
+        <div class="a">won</div>
     </div>
-    <div class="footer">
-        <span class="foot b">won</span>
-        <span class="foot a" id="rounds-won">0</span>
+    <div class="footer score-two">
+        <div class="a">guesses left</div>
+        <div class="b" id="guesses-left">0</div>
     </div>
-    <div class="footer">
-        <span class="foot a">lost</span>
-        <span class="foot b" id="rounds-lost">0</span>
+    <div class="footer score-one">
+        <div class="b" id="rounds-lost">0</div>
+        <div class="a">lost</div>
     </div>
-    <div class="footer"><button type="button" class="footer" id="play-again" disabled="true">Play Again</button></div>
-    <div class="footer"><button type="button" class="footer" id="reset">Reset Score</button></div>
+    <div class="footer a"><button type="button" class="footer" id="reset">Reset</button></div>
 </footer>
 
 <script type="module" src="./app.js"></script>
