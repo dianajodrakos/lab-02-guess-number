@@ -23,33 +23,50 @@ evalButton.addEventListener ('click', () => {
     let guess = Number(guessInput.value);
     let guessEval = compareNumbers(guess, correctNumber);
     console.log(correctNumber);
+
+    //wrong guess, low
     if (guessEval === -1) {
         resultDisplay.classList.remove('hidden');
         resultDisplay.textContent = 'too low';
         guessesLeft--;
+        //check if guesses are left, if not, display lose msg, increase attempts, disable game
+        if (guessesLeft === 0) {
+            resultDisplay.textContent = 'you lose!';
+            randomDisplay.textContent = correctNumber;
+            attempts++;
+            evalButton.disabled = true;
+        }
     }
+
+    //wrong guess, high
     if (guessEval === 1) {
         resultDisplay.classList.remove('hidden');
         resultDisplay.textContent = 'too high';
         guessesLeft--;
-    }    
+                //check if guesses are left, if not, display lose msg, increase attempts, disable game
+        if (guessesLeft === 0) {
+            resultDisplay.textContent = 'you lose!';
+            randomDisplay.textContent = correctNumber;
+            attempts++;
+            evalButton.disabled = true;
+        } 
+    }
+
+    //correct guess, display win msg, increase score, disable game
     if (guessEval === 0) {
         evalButton.disabled = true;
         resultDisplay.classList.remove('hidden');
-        resultDisplay.textContent = 'correct';
+        resultDisplay.textContent = 'you win!';
+        randomDisplay.textContent = correctNumber;
         guessesLeft = 0 ;
+        attempts++;
         wins++;
     }
 
-    if (guessesLeft === 0) {
-        randomDisplay.textContent = correctNumber;
-        attempts++;
-        evalButton.disabled = true;
-    }
-    let losses = attempts - wins;
+    //display attempts remaining + new score
     guessesLeftOutput.textContent = guessesLeft;
     winOutput.textContent = wins;
-    lossOutput.textContent = losses;
+    lossOutput.textContent = attempts - wins;
 });
 
 playAgainButton.addEventListener ('click', () => {
@@ -82,6 +99,6 @@ resetButton.addEventListener ('click', () => {
     evalButton.disabled = false;
     guessInput.value = '';
     guessesLeftOutput.textContent = guessesLeft;
-    winOutput.textContent = wins;
+    winOutput.textContent = 0;
     lossOutput.textContent = 0;
 });
